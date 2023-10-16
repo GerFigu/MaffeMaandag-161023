@@ -27,6 +27,9 @@ From <https://www.npmjs.com/package/grpc-tools>
 # install angular material
 npm i @angular/material  
 
+# copy proto file to angular app
+copy the proto file and paste it into the 'proto' folder of the angular app. Make sure to this everytime you make changes to the proto file. The back-end server and the front-end must use the same proto file.
+
 # install protoc.exe when using windows
 Download and copy protoc.exe copy it to c:\devtools
 https://github.com/protocolbuffers/protobuf/releases/download/v24.4/protoc-24.4-win64.zip
