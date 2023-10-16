@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="header">    
+        <h2>Students</h2>
+
+        <div class="actions">
+            <p class="button create" (click)="onCreate()">create new</p>
+            <p class="button reset" (click)="onReset()">reset table</p>
+        </div>
+    </div>
+
+    <table class="table">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th class="td-no-border"></th>
+    
+        <tr *ngFor="let student of students">
+            <td>{{student.firstName}}</td>
+            <td>{{student.lastName}}</td>
+            <td class="age">
+                {{student.age}}
+            </td>
+            <td class="buttons">
+                <p (click)="onEdit(student.id)" class="button edit">edit</p>
+                <p (click)="onDelete(student.id)" class="button delete">delete</p>
+            </td>
+        </tr>
+    </table>
+</div>

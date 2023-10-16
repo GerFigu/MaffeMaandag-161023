@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "MaffeMaandag.GrpcWeb";
+
+package maffe_maandag;
+
+service StudentService {
+    rpc StudentsGetAll(EmptyRequest) returns (StudentsGetAllResponse);
+    rpc StudentsReset(EmptyRequest) returns (StudentsResetResponse);
+}
+
+message EmptyRequest {
+}
+
+message StudentsGetAllResponse {
+    repeated Student students = 1;
+}
+
+message StudentsResetResponse {
+    repeated Student students = 1;
+}
+
+message Student {
+    int32 id = 1;
+    string firstName = 2;
+    string lastName = 3;
+    int32 age = 4;
+}

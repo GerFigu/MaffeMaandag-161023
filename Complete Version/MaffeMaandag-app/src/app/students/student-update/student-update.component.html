@@ -1,0 +1,41 @@
+<h2>Edit {{student?.firstName}} {{student?.lastName}}</h2>
+<form class="form" [formGroup]="studentFormGroup" (ngSubmit)="onSubmit()">
+  <mat-form-field class="form-field">
+    <mat-label>First name</mat-label>
+    <input type="text" matInput formControlName="firstName">
+    <mat-error *ngIf="studentFormGroup.controls.firstName.hasError('required')">
+      The <strong>first name</strong> is <strong>required</strong>.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <mat-label>Last name</mat-label>
+    <input type="text" matInput formControlName="lastName">
+    <mat-error *ngIf="studentFormGroup.controls.lastName.hasError('required')">
+        The <strong>last name</strong> is <strong>required</strong>.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <mat-label>Age</mat-label>
+    <input type="number" matInput formControlName="age">
+    <mat-error *ngIf="studentFormGroup.controls.age.hasError('required')">
+        The <strong>age</strong> is <strong>required</strong>.
+    </mat-error>
+    <mat-error *ngIf="studentFormGroup.controls.age.hasError('required')">
+        The <strong>age</strong> is <strong>required</strong>.
+    </mat-error>
+    <mat-error *ngIf="studentFormGroup.controls.age.hasError('min')">
+      Age can't be less than 1.
+    </mat-error>
+    <mat-error *ngIf="studentFormGroup.controls.age.hasError('max')">
+      Age can't be greater than 120.
+    </mat-error>
+  </mat-form-field>
+
+  <div class="actions">
+    <button mat-flat-button color="accent" type="submit" [disabled]="!studentFormGroup.valid" class="button">
+      Update
+    </button>
+  </div>
+</form>
