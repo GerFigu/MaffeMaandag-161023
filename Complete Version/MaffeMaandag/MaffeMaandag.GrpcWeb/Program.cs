@@ -22,14 +22,6 @@ builder.Services.AddCors(o =>
     });
 });
 
-builder.WebHost.UseKestrel(options =>
-{
-    options.Listen(IPAddress.Any, 5000, o => {
-        o.Protocols = HttpProtocols.Http2; // with this line or not - both works fine
-        o.UseHttps();
-    });
-});
-
 var app = builder.Build();
 
 app.UseHsts();
